@@ -13,6 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+
+
 Route::get('/', function () {
-    return view('home');
+
+    $title = 'Hello Laravel';
+    $subtitle = 'PC Brands';
+
+    $data = [
+        'brands' => [
+            'Asus',
+            'Sony',
+            'Acer',
+            'Hp',
+        ]
+    ];
+
+    return view('home', compact('title', 'subtitle'), $data);
 });
